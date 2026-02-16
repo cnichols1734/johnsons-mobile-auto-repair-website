@@ -3,283 +3,914 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Johnson's Mobile Auto Repair in Old River-Winfree TX - We come to you for auto repair at your home, work, or roadside. Mobile mechanic services in Chambers County. Call (832) 262-9263">
+    <meta name="description" content="Johnson's Mobile Auto Repair in Old River-Winfree TX. We come to you - mobile mechanic services, diagnostics, brake repair, oil changes, and roadside assistance. No towing needed.">
     <title>Johnson's Mobile Auto Repair | Old River-Winfree | We Come to You</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AutoRepair",
-        "name": "Johnson's Mobile Auto Repair",
-        "telephone": "+1-832-262-9263",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Old River-Winfree",
-            "addressRegion": "TX",
-            "postalCode": "77535",
-            "addressCountry": "US"
-        },
-        "areaServed": ["Old River-Winfree", "Cove", "Chambers County", "Baytown", "Mont Belvieu"],
-        "openingHoursSpecification": [
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "00:00", "closes": "23:59"},
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "00:00", "closes": "23:59"},
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "00:00", "closes": "23:59"},
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "00:00", "closes": "23:59"},
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "00:00", "closes": "23:59"},
-            {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "00:00", "closes": "23:59"}
-        ],
-        "priceRange": "$$"
-    }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        :root {
+            --color-navy: #1A1A2E;
+            --color-white: #FFFFFF;
+            --color-accent: #E63946;
+            --color-accent-dark: #c42d3a;
+            --color-gray-100: #f8f9fa;
+            --color-gray-200: #e9ecef;
+            --color-gray-600: #6c757d;
+            --color-gray-800: #343a40;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--color-navy);
+            background: var(--color-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-dark);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--color-white);
+            color: var(--color-white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-white);
+            color: var(--color-navy);
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-navy);
+            padding: 16px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--color-white);
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-white);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .nav-phone i {
+            color: var(--color-accent);
+        }
+
+        .nav-phone:hover {
+            color: var(--color-accent);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.85)),
+                        url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80') center/cover no-repeat;
+            padding: 120px 0 80px;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 7vw, 64px);
+            color: var(--color-white);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--color-gray-200);
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .hero-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--color-white);
+            padding: 16px 24px;
+            background: var(--color-accent);
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .hero-phone:hover {
+            background: var(--color-accent-dark);
+            color: var(--color-white);
+        }
+
+        .hero-phone i {
+            font-size: 20px;
+        }
+
+        .hero-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        .hero-benefit {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-white);
+            font-weight: 500;
+        }
+
+        .hero-benefit i {
+            color: var(--color-accent);
+            font-size: 18px;
+        }
+
+        .services {
+            padding: 100px 0;
+            background: var(--color-gray-100);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            color: var(--color-navy);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--color-gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .service-group {
+            background: var(--color-white);
+            padding: 32px;
+            border-radius: 4px;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .service-group h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--color-navy);
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--color-gray-200);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li i {
+            color: var(--color-accent);
+            margin-top: 4px;
+            font-size: 14px;
+        }
+
+        .about {
+            padding: 100px 0;
+            background: var(--color-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .about-content h2 {
+            font-size: clamp(32px, 5vw, 44px);
+            margin-bottom: 24px;
+            color: var(--color-navy);
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: var(--color-gray-600);
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 32px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--color-gray-600);
+            margin-top: 8px;
+        }
+
+        .about-map {
+            background: var(--color-gray-100);
+            border-radius: 4px;
+            padding: 24px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-map h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .about-map p {
+            color: var(--color-gray-600);
+            font-size: 15px;
+        }
+
+        .about-map i {
+            font-size: 48px;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+        }
+
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--color-navy);
+        }
+
+        .how-it-works .section-header h2 {
+            color: var(--color-white);
+        }
+
+        .how-it-works .section-header p {
+            color: var(--color-gray-600);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        @media (max-width: 900px) {
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step {
+            text-align: center;
+            padding: 32px 16px;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: var(--color-accent);
+            color: var(--color-white);
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border-radius: 4px;
+        }
+
+        .step h4 {
+            font-size: 20px;
+            color: var(--color-white);
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 15px;
+            color: var(--color-gray-600);
+        }
+
+        .service-area {
+            padding: 100px 0;
+            background: var(--color-gray-100);
+        }
+
+        .area-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .area-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .area-text h2 {
+            font-size: clamp(32px, 5vw, 44px);
+            margin-bottom: 24px;
+        }
+
+        .area-text p {
+            font-size: 17px;
+            color: var(--color-gray-600);
+            margin-bottom: 20px;
+        }
+
+        .area-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            margin-top: 24px;
+        }
+
+        .area-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .area-list li i {
+            color: var(--color-accent);
+        }
+
+        .area-map {
+            background: var(--color-white);
+            border-radius: 4px;
+            padding: 32px;
+            text-align: center;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .area-map i {
+            font-size: 48px;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+        }
+
+        .area-map h4 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .area-map p {
+            color: var(--color-gray-600);
+        }
+
+        .contact {
+            padding: 100px 0;
+            background: var(--color-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        .contact-info h2 {
+            font-size: clamp(32px, 5vw, 44px);
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 17px;
+            color: var(--color-gray-600);
+            margin-bottom: 32px;
+        }
+
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-phone-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .contact-phone-icon i {
+            font-size: 24px;
+            color: var(--color-white);
+        }
+
+        .contact-phone-text h4 {
+            font-size: 14px;
+            color: var(--color-gray-600);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .contact-phone-text a {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-navy);
+        }
+
+        .contact-phone-text a:hover {
+            color: var(--color-accent);
+        }
+
+        .contact-hours h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+
+        .hours-list li span:first-child {
+            font-weight: 500;
+        }
+
+        .hours-list li span:last-child {
+            color: var(--color-gray-600);
+        }
+
+        .contact-form {
+            background: var(--color-gray-100);
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 16px;
+            border: 1px solid var(--color-gray-200);
+            border-radius: 4px;
+            background: var(--color-white);
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 17px;
+        }
+
+        .footer {
+            background: var(--color-navy);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--color-gray-600);
+            font-size: 15px;
+        }
+
+        .footer a {
+            color: var(--color-accent);
+        }
+
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-navy);
+            padding: 12px 24px;
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-cta a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-white);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .mobile-cta i {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 600px) {
+            .mobile-cta {
+                display: flex;
+            }
+
+            body {
+                padding-bottom: 60px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="#" class="nav-logo">Johnson's <span class="nav-logo-accent">Mobile Auto Repair</span></a>
-                <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#service-area">Service Area</a></li>
-                    <li><a href="#contact" class="nav-cta">Contact</a></li>
-                </ul>
-                <a href="tel:+18322629263" class="nav-phone">
-                    <svg class="nav-phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    (832) 262-9263
-                </a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Johnson's <span>Mobile</span></a>
+            <a href="tel:+18322629263" class="nav-phone">
+                <i class="fas fa-phone"></i>
+                (832) 262-9263
+            </a>
+        </div>
+    </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="hero-title">Mobile Auto Repair in Old River-Winfree</h1>
-                <p class="hero-subtitle">We come to you. No towing needed. Get back on the road faster.</p>
-                <div class="hero-cta-group">
-                    <a href="tel:+18322629263" class="hero-btn hero-btn-primary">
-                        <svg class="hero-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        Call (832) 262-9263
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-in">
+                <h1>Mobile Auto Repair in Old River-Winfree</h1>
+                <p class="hero-subtitle">We bring the repair shop to you. No towing needed, no time wasted. Professional mechanic services at your home, work, or roadside.</p>
+                <div class="hero-cta">
+                    <a href="tel:+18322629263" class="hero-phone">
+                        <i class="fas fa-phone"></i>
+                        (832) 262-9263
                     </a>
-                    <a href="#contact" class="hero-btn hero-btn-secondary">Request Appointment</a>
                 </div>
                 <div class="hero-benefits">
                     <div class="hero-benefit">
-                        <span class="hero-benefit-icon">→</span>
-                        <span>We Come to You</span>
+                        <i class="fas fa-check-circle"></i>
+                        We Come to You
                     </div>
                     <div class="hero-benefit">
-                        <span class="hero-benefit-icon">→</span>
-                        <span>No Towing Needed</span>
+                        <i class="fas fa-check-circle"></i>
+                        Same-Day Service
                     </div>
                     <div class="hero-benefit">
-                        <span class="hero-benefit-icon">→</span>
-                        <span>Same-Day Service</span>
+                        <i class="fas fa-check-circle"></i>
+                        No Towing Needed
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <div class="services-header">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="section-subtitle">Complete auto repair at your location. We bring the shop to you.</p>
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Complete mobile auto repair services. We handle most common vehicle issues right at your location.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-group">
+                    <h3>Diagnostics & Electrical</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i> Check Engine Light Diagnostics</li>
+                        <li><i class="fas fa-chevron-right"></i> Electrical System Repairs</li>
+                        <li><i class="fas fa-chevron-right"></i> Wiring & Fuse Issues</li>
+                        <li><i class="fas fa-chevron-right"></i> Battery Testing & Replacement</li>
+                    </ul>
                 </div>
-                <div class="services-grid">
-                    <div class="service-group">
-                        <h3 class="service-group-title">Diagnostics &amp; Electrical</h3>
-                        <ul class="service-list">
-                            <li>Mobile Diagnostics — Check engine light diagnostics at your location</li>
-                            <li>Electrical Repairs — Wiring, fuses, and electrical component replacement</li>
-                            <li>Alternator &amp; Starter — Charging system repairs on-site</li>
-                        </ul>
-                    </div>
-                    <div class="service-group">
-                        <h3 class="service-group-title">Brakes &amp; Suspension</h3>
-                        <ul class="service-list">
-                            <li>Brake Repair — Brake pad replacement, rotor service at your home or work</li>
-                        </ul>
-                    </div>
-                    <div class="service-group">
-                        <h3 class="service-group-title">Maintenance</h3>
-                        <ul class="service-list">
-                            <li>Oil Changes — Conventional and synthetic mobile oil changes</li>
-                            <li>Battery Replacement — Mobile battery testing and replacement</li>
-                        </ul>
-                    </div>
-                    <div class="service-group">
-                        <h3 class="service-group-title">Fuel &amp; Engine</h3>
-                        <ul class="service-list">
-                            <li>Fuel System — Fuel pump, filter, and injector service</li>
-                        </ul>
-                    </div>
-                    <div class="service-group">
-                        <h3 class="service-group-title">Specialty Services</h3>
-                        <ul class="service-list">
-                            <li>Pre-Purchase Inspections — Mobile used car inspections before you buy</li>
-                            <li>Roadside Assistance — Emergency mobile repairs in Old River-Winfree area</li>
-                            <li>Fleet Services — Multi-vehicle maintenance for small business fleets</li>
-                        </ul>
-                    </div>
+                <div class="service-group">
+                    <h3>Brakes & Suspension</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i> Brake Pad Replacement</li>
+                        <li><i class="fas fa-chevron-right"></i> Rotor Service</li>
+                        <li><i class="fas fa-chevron-right"></i> Brake Fluid Exchange</li>
+                    </ul>
+                </div>
+                <div class="service-group">
+                    <h3>Engine & Maintenance</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i> Oil Changes (Conventional & Synthetic)</li>
+                        <li><i class="fas fa-chevron-right"></i> Alternator Service</li>
+                        <li><i class="fas fa-chevron-right"></i> Starter Repairs</li>
+                        <li><i class="fas fa-chevron-right"></i> Fuel System Service</li>
+                    </ul>
+                </div>
+                <div class="service-group">
+                    <h3>Specialized Services</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i> Pre-Purchase Inspections</li>
+                        <li><i class="fas fa-chevron-right"></i> Roadside Assistance</li>
+                        <li><i class="fas fa-chevron-right"></i> Fleet Maintenance</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-content">
-                        <h2 class="section-title">About Johnson's Mobile Auto Repair</h2>
-                        <p class="about-text">Johnson's Mobile Auto Repair is the mechanic who comes to you. Serving the Old River-Winfree community with on-site auto repair that saves you time and eliminates the hassle of towing.</p>
-                        <p class="about-text">Whether you're stranded on the side of the road, your car won't start in your driveway, or you need routine maintenance at your workplace, Johnson's brings the repair shop to your location.</p>
-                        <p class="about-text">In a community where the nearest shop might be miles away and towing costs add up fast, mobile service isn't just convenient—it's essential. Johnson's represents a different approach to auto care: personal, local, and built around your schedule, not ours.</p>
-                        <div class="about-cta">
-                            <a href="tel:+18322629263" class="about-phone">
-                                <strong>Call now:</strong> (832) 262-9263
-                            </a>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Your Local Mobile Mechanic</h2>
+                    <p>Johnson's Mobile Auto Repair brings the expertise of a professional repair shop directly to your location. Serving Old River-Winfree and the surrounding Chambers County area, we eliminate the hassle of traditional auto shop visits.</p>
+                    <p>Whether you're stranded on the side of the road, your car won't start in your driveway, or you need routine maintenance at your workplace, we come to you. No arranging transportation, no waiting at a shop, no towing costs.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
                         </div>
-                    </div>
-                    <div class="about-map">
-                        <div class="map-placeholder">
-                            <svg class="map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            <div class="map-text">
-                                <strong>Serving Chambers County</strong>
-                                <span>Old River-Winfree, Cove &amp; Surrounding Areas</span>
-                            </div>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Old+River-Winfree+TX+77535" target="_blank" rel="noopener" class="map-link">View on Google Maps →</a>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Mobile Service</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Local</div>
+                            <div class="stat-label">Old River-Winfree</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="how-it-works" class="how-it-works">
-            <div class="container">
-                <div class="how-it-works-header">
-                    <h2 class="section-title">How It Works</h2>
-                    <p class="section-subtitle">Four simple steps to get your vehicle repaired</p>
-                </div>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">Call or Text</h3>
-                        <p class="step-desc">Reach us at (832) 262-9263. Describe the issue and we'll advise on next steps.</p>
-                    </div>
-                    <div class="step-connector"></div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">Schedule</h3>
-                        <p class="step-desc">We'll set up an appointment that fits your schedule—same-day when possible.</p>
-                    </div>
-                    <div class="step-connector"></div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">We Come to You</h3>
-                        <p class="step-desc">Our mechanic arrives at your location with the tools and parts needed.</p>
-                    </div>
-                    <div class="step-connector"></div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">Get Back on the Road</h3>
-                        <p class="step-desc">Quality repairs completed on-site. No tow truck, no waiting at a shop.</p>
-                    </div>
+                <div class="about-map">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Old River-Winfree, TX 77535</h4>
+                    <p>Mobile Service Area<br>Chambers County & Surrounding Areas</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="service-area" class="service-area">
-            <div class="container">
-                <div class="service-area-header">
-                    <h2 class="section-title">Service Area</h2>
-                    <p class="section-subtitle">Proudly serving Old River-Winfree and surrounding Chambers County</p>
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Getting your vehicle repaired has never been easier.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Call or Text</h4>
+                    <p>Contact us at (832) 262-9263 to describe your vehicle issue.</p>
                 </div>
-                <div class="areas-list">
-                    <div class="area-card">
-                        <h3>Old River-Winfree</h3>
-                        <p>Primary service area — we come to you</p>
-                    </div>
-                    <div class="area-card">
-                        <h3>Cove</h3>
-                        <p>Mobile service available</p>
-                    </div>
-                    <div class="area-card">
-                        <h3>Baytown</h3>
-                        <p>Mobile service available</p>
-                    </div>
-                    <div class="area-card">
-                        <h3>Mont Belvieu</h3>
-                        <p>Mobile service available</p>
-                    </div>
-                    <div class="area-card">
-                        <h3>Chambers County</h3>
-                        <p>Surrounding areas — ask about your location</p>
-                    </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Schedule</h4>
+                    <p>We arrange a convenient time that fits your schedule.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>We Come to You</h4>
+                    <p>Our fully-equipped service vehicle arrives at your location.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Back on the Road</h4>
+                    <p>Your vehicle is repaired. No tow truck, no shop visit needed.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="testimonials" class="testimonials">
-            <div class="container">
-                <div class="testimonials-header">
-                    <h2 class="section-title">What Our Customers Say</h2>
+    <section class="service-area" id="area">
+        <div class="container">
+            <div class="area-content">
+                <div class="area-text">
+                    <h2>Serving Chambers County</h2>
+                    <p>Johnson's Mobile Auto Repair provides on-site auto repair services throughout the Old River-Winfree area and surrounding communities. We come to you wherever you are—at home, at work, or stranded roadside.</p>
+                    <p>No need to arrange transportation or pay for towing. We bring the tools and expertise directly to your location.</p>
+                    <ul class="area-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Old River-Winfree</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cove</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mont Belvieu</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Baytown</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Chambers County</li>
+                    </ul>
                 </div>
-                <div class="testimonials-list">
-                    <blockquote class="testimonial">
-                        <span class="testimonial-quote">"</span>
-                        <p class="testimonial-text">I've been to this location 2x and I have DoorDashed 2x. Donuts are always hot and never cold.</p>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        <span class="testimonial-quote">"</span>
-                        <p class="testimonial-text">The owners and their son (Zane) were extremely nice and you can tell they put a lot of work into this place.</p>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        <span class="testimonial-quote">"</span>
-                        <p class="testimonial-text">Food was delicious and Customer Service was excellent. Miss Amy is a great cook. I will definitely come back again.</p>
-                    </blockquote>
+                <div class="area-map">
+                    <i class="fas fa-truck"></i>
+                    <h4>Mobile Service</h4>
+                    <p>We come to you anywhere in our service area</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2 class="section-title">Request an Appointment</h2>
-                        <p class="contact-text">Fill out the form and we'll get back to you as soon as possible. Or give us a call directly.</p>
-                        <a href="tel:+18322629263" class="contact-phone">
-                            <svg class="contact-phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            (832) 262-9263
-                        </a>
-                        <div class="contact-hours">
-                            <h4>Hours</h4>
-                            <ul>
-                                <li><span>Mon - Fri:</span> By appointment</li>
-                                <li><span>Saturday:</span> By appointment</li>
-                                <li><span>Sunday:</span> Closed</li>
-                            </ul>
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to schedule your mobile auto repair? Call us directly or fill out the form and we'll get back to you shortly.</p>
+                    <div class="contact-phone">
+                        <div class="contact-phone-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-phone-text">
+                            <h4>Call or Text</h4>
+                            <a href="tel:+18322629263">(832) 262-9263</a>
                         </div>
                     </div>
-                    <form class="contact-form" id="appointmentForm">
+                    <div class="contact-hours">
+                        <h4>Hours</h4>
+                        <ul class="hours-list">
+                            <li><span>Monday</span><span>By Appointment</span></li>
+                            <li><span>Tuesday</span><span>By Appointment</span></li>
+                            <li><span>Wednesday</span><span>By Appointment</span></li>
+                            <li><span>Thursday</span><span>By Appointment</span></li>
+                            <li><span>Friday</span><span>By Appointment</span></li>
+                            <li><span>Saturday</span><span>By Appointment</span></li>
+                            <li><span>Sunday</span><span>Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Request an Appointment</h3>
+                    <form id="appointmentForm">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required>
@@ -289,24 +920,20 @@
                             <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email (optional)</label>
+                            <label for="email">Email Address</label>
                             <input type="email" id="email" name="email">
                         </div>
                         <div class="form-group">
-                            <label for="vehicle">Vehicle Info (Year/Make/Model)</label>
-                            <input type="text" id="vehicle" name="vehicle" required>
-                        </div>
-                        <div class="form-group">
                             <label for="service">Service Needed</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="diagnostics">Check Engine Light / Diagnostics</option>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="diagnostics">Diagnostics</option>
                                 <option value="battery">Battery Replacement</option>
                                 <option value="brakes">Brake Repair</option>
                                 <option value="oil">Oil Change</option>
-                                <option value="alternator">Alternator / Starter</option>
-                                <option value="fuel">Fuel System</option>
+                                <option value="alternator">Alternator/Starter</option>
                                 <option value="electrical">Electrical Repair</option>
+                                <option value="fuel">Fuel System</option>
                                 <option value="inspection">Pre-Purchase Inspection</option>
                                 <option value="roadside">Roadside Assistance</option>
                                 <option value="fleet">Fleet Services</option>
@@ -314,43 +941,54 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Describe the Issue</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
+                            <label for="message">Describe Your Issue</label>
+                            <textarea id="message" name="message" placeholder="Please describe the issue with your vehicle..."></textarea>
                         </div>
-                        <button type="submit" class="form-submit">Request Appointment</button>
+                        <button type="submit" class="btn btn-primary">Request Appointment</button>
                     </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Johnson's Mobile Auto Repair</h3>
-                    <p>Mobile auto repair in Old River-Winfree. We come to you.</p>
-                </div>
-                <div class="footer-contact">
-                    <a href="tel:+18322629263" class="footer-phone">(832) 262-9263</a>
-                    <p>Old River-Winfree, TX 77535</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Johnson's Mobile Auto Repair. All rights reserved.</p>
-            </div>
+            <p>&copy; 2026 Johnson's Mobile Auto Repair. All rights reserved.</p>
         </div>
     </footer>
 
-    <div class="mobile-bar">
-        <a href="tel:+18322629263" class="mobile-bar-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            Call Now
+    <div class="mobile-cta">
+        <a href="tel:+18322629263">
+            <i class="fas fa-phone"></i>
+            Call (832) 262-9263
         </a>
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoRepair",
+        "name": "Johnson's Mobile Auto Repair",
+        "telephone": "+18322629263",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Old River-Winfree",
+            "addressRegion": "TX",
+            "postalCode": "77535",
+            "addressCountry": "US"
+        },
+        "areaServed": ["Old River-Winfree", "Cove", "Mont Belvieu", "Baytown", "Chambers County"],
+        "description": "Mobile auto repair services in Old River-Winfree TX. We come to you for diagnostics, brake repair, oil changes, and more.",
+        "openingHours": "Mo-Fr 08:00-18:00"
+    }
+    </script>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! We will contact you shortly at the phone number provided.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
